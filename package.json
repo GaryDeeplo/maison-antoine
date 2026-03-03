@@ -1,0 +1,16 @@
+{
+  "name": "maison-antoine-site",
+  "version": "1.0.0",
+  "description": "Site web Maison Antoine - Tapissier décorateur à Namur",
+  "scripts": {
+    "dev": "lite-server",
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
