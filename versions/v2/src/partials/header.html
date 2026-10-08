@@ -1,0 +1,33 @@
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <nav class="nav nav--left" aria-label="Navigation principale">
+      <a href="index.html" data-nav="home">Accueil</a>
+      <a href="la-maison.html" data-nav="maison">La Maison</a>
+      <a href="savoir-faire.html" data-nav="savoir-faire">Savoir&#8209;faire</a>
+    </nav>
+
+    <a class="brand" href="index.html" aria-label="Maison Antoine, accueil"><img class="brand__logo" src="assets/img/logo-antoine.webp" width="900" height="242" alt="" /></a>
+
+    <nav class="nav nav--right" aria-label="Navigation secondaire">
+      <a href="galerie.html" data-nav="galerie">Galerie</a>
+      <a href="partenaires.html" data-nav="partenaires">Partenaires</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
+      <span class="nav-toggle__bar"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<!-- hors du <header> : le backdrop-filter du header piégerait l'overlay fixed -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+  <a href="index.html" data-nav="home">Accueil</a>
+  <a href="la-maison.html" data-nav="maison">La Maison</a>
+  <a href="savoir-faire.html" data-nav="savoir-faire">Savoir&#8209;faire</a>
+  <a href="galerie.html" data-nav="galerie">Galerie</a>
+  <a href="partenaires.html" data-nav="partenaires">Partenaires</a>
+  <a href="contact.html" data-nav="contact">Contact</a>
+  <a class="mobile-nav__phone" href="tel:+32495703030">+32 495 70 30 30</a>
+</nav>

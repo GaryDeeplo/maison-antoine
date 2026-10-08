@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Site web Maison Antoine - Tapissier décorateur à Namur",
   "scripts": {
-    "dev": "lite-server",
-    "start": "lite-server"
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && lite-server",
+    "start": "lite-server",
+    "build:v3": "node scripts/build.mjs versions/v3/src versions/v3/dist"
   },
   "keywords": [],
   "author": "",

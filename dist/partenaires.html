@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <script>
+    // Neutralise tout service worker périmé + vide les caches (anciens affichages)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (rs) {
+        rs.forEach(function (r) { r.unregister(); });
+      });
+    }
+    if (window.caches && caches.keys) {
+      caches.keys().then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); });
+    }
+  </script>
+  <title>Nos partenaires · Maison Antoine</title>
+  <meta name="description" content="Les maisons d'édition de tissus et papiers peints avec qui nous travaillons : Pierre Frey, Élitis, Designers Guild, Nobilis, Casamance, Kvadrat et bien d'autres." />
+  <meta property="og:title" content="Nos partenaires · Maison Antoine" />
+  <meta property="og:description" content="Les maisons d'édition de tissus et papiers peints avec qui nous travaillons : Pierre Frey, Élitis, Designers Guild, Nobilis, Casamance, Kvadrat et bien d'autres." />
+  <meta property="og:type" content="website" />
+  <link rel="preload" href="assets/fonts/century-gothic-400.woff2" as="font" type="font/woff2" crossorigin />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="assets/css/liasse.css?v=0dc406d7" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon.svg?v=0dc406d7" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#f3f2ef" />
+</head>
+<body data-page="partenaires">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="hd" data-header>
+  <a class="hd__brand" href="index.html" aria-label="Maison Antoine, accueil"><img src="assets/img/logo-antoine.webp" width="900" height="242" alt="" /></a>
+
+  <nav class="hd__nav" aria-label="Navigation principale">
+    <a href="la-maison.html" data-nav="maison">La Maison</a>
+    <a href="savoir-faire.html" data-nav="savoir-faire">Savoir&#8209;faire</a>
+    <a href="galerie.html" data-nav="galerie">Galerie</a>
+    <a href="partenaires.html" data-nav="partenaires" aria-current="page">Partenaires</a>
+    <a href="contact.html" data-nav="contact">Contact</a>
+  </nav>
+
+  <a class="hd__status" href="index.html#visite" data-open-status>
+    <span class="hd__dot" aria-hidden="true"></span>
+    <span data-open-text>Matériauthèque&nbsp;: jeu&nbsp;–&nbsp;sam, 10h&nbsp;–&nbsp;18h</span>
+  </a>
+
+  <button class="hd__toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+    <span class="hd__toggle-label">Menu</span>
+  </button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu" data-menu>
+  <a href="index.html" data-nav="home">Accueil</a>
+  <a href="la-maison.html" data-nav="maison">La Maison</a>
+  <a href="savoir-faire.html" data-nav="savoir-faire">Savoir&#8209;faire</a>
+  <a href="galerie.html" data-nav="galerie">Galerie</a>
+  <a href="partenaires.html" data-nav="partenaires" aria-current="page">Partenaires</a>
+  <a href="contact.html" data-nav="contact">Contact</a>
+  <a class="menu__phone" href="tel:+32495703030">+32 495 70 30 30</a>
+</nav>
+
+  <main id="main">
+    <section class="ph" aria-labelledby="h-page">
+  <div class="rail__rod" aria-hidden="true"><span></span></div>
+  <div class="ph__cards">
+    <div class="card ph__card">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <div class="ph__body">
+        <p class="eyebrow">Nos partenaires</p>
+        <h1 class="ph__title" id="h-page">Les belles maisons avec qui nous <em>travaillons</em>.</h1>
+        <p class="ph__intro">
+          Notre matériauthèque réunit les éditeurs les plus exigeants de la décoration&nbsp;: tissus, papiers peints,
+          revêtements muraux, passementeries… Le tout sélectionné pour sa qualité et son caractère.
+        </p>
+      </div>
+    </div>
+    <figure class="card ph__swatch">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <img class="card__swatch" src="assets/img/photos/ma-11.webp" alt="Le showroom et ses rayonnages d'étoffes et de passementeries" style="--pos:62% 50%" fetchpriority="high" decoding="async" />
+    </figure>
+  </div>
+</section>
+
+<section class="partners" aria-label="Éditeurs">
+  <div class="rail__rod rail__rod--thin" aria-hidden="true"><span></span></div>
+  <div class="partners__grid">
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div><img loading="lazy" src="assets/img/editeurs/elitis.png" width="1000" height="374" style="--w:7.78rem" alt="Élitis" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div><img loading="lazy" src="assets/img/editeurs/pierre-frey.png" width="1000" height="1002" style="--w:6.5rem" alt="Pierre Frey" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div><img loading="lazy" src="assets/img/editeurs/nobilis.png" width="1000" height="236" style="--w:8.8rem" alt="Nobilis" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div><img loading="lazy" src="assets/img/editeurs/designers-guild.png" width="1000" height="74" style="--w:11.88rem" alt="Designers Guild" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div><img loading="lazy" src="assets/img/editeurs/casamance.png" width="1000" height="89" style="--w:11.88rem" alt="Casamance" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/morris.png" width="1000" height="139" style="--w:11.88rem" alt="Morris &amp; Co" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/christian-lacroix.png" width="1000" height="109" style="--w:11.88rem" alt="Christian Lacroix Maison" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/manuel-canovas.png" width="1000" height="160" style="--w:11.88rem" alt="Manuel Canovas" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/osborne-little.png" width="1000" height="59" style="--w:11.88rem" alt="Osborne &amp; Little" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/cole-son.png" width="1000" height="219" style="--w:10.17rem" alt="Cole &amp; Son" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/jane-churchill.png" width="1000" height="92" style="--w:11.88rem" alt="Jane Churchill" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/les-dominotiers.png" width="1000" height="137" style="--w:11.88rem" alt="Les Dominotiers" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/zimmer-rohde.png" width="1000" height="793" style="--w:4.6rem" alt="Zimmer + Rohde" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/sahco.png" width="1000" height="234" style="--w:9.84rem" alt="Sahco" /></figure>
+    <figure class="card partner"><div class="card__eyelet" aria-hidden="true"></div><img loading="lazy" src="assets/img/editeurs/kvadrat.png" width="1000" height="213" style="--w:8.6rem" alt="Kvadrat" /></figure>
+  </div>
+</section>
+
+<section class="cta" aria-labelledby="h-cta">
+  <div class="card cta__card">
+    <div class="card__eyelet" aria-hidden="true"></div>
+    <p class="eyebrow">Venir voir, toucher, comparer</p>
+    <h2 class="cta__title" id="h-cta">Toute la collection vous <em>attend</em>.</h2>
+    <p class="prose">
+      Les échantillons et nuanciers se découvrent bien mieux en main. Venez à la Maison explorer notre
+      matériauthèque et découvrir les matières avec nous.
+    </p>
+    <p class="card__actions"><a class="btn" href="contact.html">Nous rendre visite</a></p>
+  </div>
+</section>
+  </main>
+  <footer class="ft">
+  <div class="ft__rod" aria-hidden="true"></div>
+  <div class="ft__inner">
+    <a class="ft__brand" href="index.html" aria-label="Maison Antoine, accueil"><img src="assets/img/logo-antoine.webp" width="900" height="242" alt="" loading="lazy" /></a>
+
+    <address class="ft__addr">
+      Maison Antoine<br />
+      Avenue du Bourgmestre<br />
+      Jean Materne 70, <span class="nowrap">5100 Namur</span>
+    </address>
+
+    <p class="ft__links">
+      <a href="tel:+32495703030">T. +32 495 70 30 30</a><br />
+      <a href="assets/documents/conditions-generales-de-vente.pdf" target="_blank" rel="noopener">Conditions générales</a>
+    </p>
+
+    <p class="ft__social"><a class="social-icon" href="https://www.instagram.com/maisonantoinenamur/" target="_blank" rel="noopener" aria-label="Instagram @maisonantoinenamur"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg></a></p>
+
+    <p class="ft__legal">
+      <span>© <span data-year>2026</span> Décoration Antoine · BE 0415.006.679</span>
+      <span>Haute couture intérieure à Namur depuis 1895</span>
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp : bouton flottant, préchoix du besoin puis message pré-rédigé -->
+<div class="wa" data-wa>
+  <div class="wa__panel" id="wa-panel" role="dialog" aria-labelledby="wa-title" hidden>
+    <p class="wa__title" id="wa-title">Quel est votre projet&nbsp;?</p>
+    <p class="wa__hint">Plusieurs choix possibles. Nous vous répondons sur WhatsApp.</p>
+    <form class="wa__form" action="https://wa.me/32495703030" target="_blank" data-wa-form>
+      <fieldset class="wa__list">
+        <legend class="sr-only">Votre projet (plusieurs choix possibles)</legend>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="habiller mes fenêtres" /><span>Habiller des fenêtres</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="choisir un revêtement mural" /><span>Choisir un revêtement mural</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="faire garnir du mobilier" /><span>Garnir du mobilier</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="choisir une étoffe" /><span>Choisir une étoffe</span></label>
+        <label class="wa__opt"><input type="checkbox" data-wa-other-toggle /><span>Autre</span></label>
+        <div class="wa__other" data-wa-other hidden>
+          <label class="sr-only" for="wa-other">Précisez votre demande</label>
+          <input id="wa-other" type="text" maxlength="120" placeholder="Ex. refaire mes coussins" autocomplete="off" />
+        </div>
+      </fieldset>
+      <button class="wa__send" type="submit">Écrire sur WhatsApp</button>
+    </form>
+  </div>
+  <button class="wa__toggle" type="button" aria-expanded="false" aria-controls="wa-panel" data-wa-toggle>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+    <span class="sr-only">Nous écrire sur WhatsApp</span>
+  </button>
+</div>
+
+  <script src="assets/js/liasse.js?v=0dc406d7" defer></script>
+</body>
+</html>

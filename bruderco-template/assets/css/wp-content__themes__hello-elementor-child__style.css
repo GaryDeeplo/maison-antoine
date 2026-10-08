@@ -1,0 +1,227 @@
+/* 
+Theme Name: Hello Elementor Child
+Theme URI: https://github.com/elementor/hello-theme-child/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 3.0.0
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later..schedule-MyAccount-content .schedule_list_table.shipper_list table button.view_modal.view_record
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+.archiveb span.price, .archiveb a.button {
+    display: none !important;
+}
+
+.product-img--main {
+   position: relative;
+  overflow: hidden;
+}
+
+.product-img--main__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: -webkit-transform .5s ease-out;
+    transition: -webkit-transform .5s ease-out;
+    transition: transform .5s ease-out;
+    transition: transform .5s ease-out,-webkit-transform .5s ease-out;
+}
+
+
+
+ div.elementor-widget-container div{
+		font-family: "MADE Mirage", Sans-serif;
+   	font-size: 18px;
+		font-weight: normal;
+}
+.single-product .woocommerce-product-details__short-description p{
+    display:flex;
+    align-items: center;
+}
+.single-product .flex-control-thumbs li { margin: 10px 10px 0 0 !important; }
+
+.single-product .woocommerce-product-details__short-description img{
+    margin-right: 10px;
+    width: 20px;
+}
+.elementor-widget-woocommerce-product-content p {
+    font-size: 18px !important;
+}
+
+
+button.wpfFilterButton.wpfButton{
+    background-color: #222222;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    font-family: MADE-Mirage;
+    font-size: 18px;
+		font-weight: normal;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+button.wpfFilterButton.wpfButton:hover{
+    background-color: white;
+    border: 1px solid #222222;
+    color: #222222;
+}
+.single_variation_wrap {
+    display: none !important;
+}
+
+.single-product table.variations { margin: 10px 0 !important; font-family: "MADE Mirage", Sans-serif; }
+
+.single-product .variations th, .variations td { background: transparent !important; }
+
+.single-product table.variations th { padding: 0; display: flex; width: 100px; }
+
+.single-product table.variations th label { font-size: 24px; color: #222222; }
+
+.single-product table.variations td { padding: 15px 0 0 0; display: block; }
+
+.single-product table.variations td .reset_variations { display: none !important; }
+
+.single-product .elementor-widget-woocommerce-product-content p strong { width: 140px; display: inline-block; margin-top: 10px; }
+
+.single-product .woocommerce-product-details__short-description .product_details { display: flex; flex-direction: column; row-gap: 5px; }
+
+
+.single-product .product_details .care_text { display: flex; flex-wrap: wrap; align-items: center; font-size: 20px !important; padding-left: 5px; }
+
+.single-product .back_to_overview_btn a { font-size: 18px; line-height: 24px; color: #222222; padding: 0; background-color: transparent; text-decoration: underline; }
+
+.single-product .back_to_overview_btn a:hover { color: #000; opacity: 0.6; }
+
+.single-product .back_to_overview_btn .elementor-button-wrapper { display: flex; justify-content: end; }
+
+.single-product .pswp__bg { background-color: rgba(0,0,0,0.7); }
+
+.single-product .pswp__caption { background-color: unset; }
+
+.single-product .pswp__top-bar { background-color: unset; }
+
+p.stock.out-of-stock, label{
+	display: none;
+}
+.woobewoo-filter-loader.spinner{
+	background:url("../wp-content/uploads/2023/11/Bruder_logo_black.svg") !important; background-size: 100% !important; background-repeat: no-repeat !important;
+}
+.back_button {
+    float: right;
+    padding: 5px 10px;
+    border: 1px solid;
+    font-family: "MADE Mirage", Sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    background-color: #222222;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #222222;
+    border-radius: 0px 0px 0px 0px;
+    color: white;
+}
+a.back_button:hover {
+    color: #222222;
+    background-color: #FFFFFF;
+}
+.dialog-widget.dialog-lightbox-widget {
+    display: none !important;
+}
+
+.woocommerce-product-gallery__image a {
+   position: relative;
+  overflow: hidden;
+  float: left;
+}
+
+.product-img--main__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: -webkit-transform .5s ease-out;
+    transition: -webkit-transform .5s ease-out;
+    transition: transform .5s ease-out,-webkit-transform .5s ease-out;
+}
+
+
+
+.popup_content h3{
+	text-align: center!important;
+}
+.popup_content .button{
+	padding: 12px 24px!important;
+background-color:#222222!important;
+border: 1px solid #222222!important;
+color: #fff!important;
+
+    font-family: "MADE Mirage", Sans-serif!important;
+    font-size: 18px!important;
+    font-weight: normal!important;
+}
+.popup_content .button:hover{
+	background-color: transparent!important;
+color:  #222222!important;
+}
+.popup_content .gform-field-label {
+    margin-bottom: 8px;
+}
+
+
+@media (max-width: 767px){ 
+	
+	.woocommerce-product-gallery__image a { width: 100%; height: 100%; }
+	
+	.popup_content{
+		width: 90%;
+	}
+}
+@media (max-width: 575px){ 
+.popup_content h3{
+	font-size: 20px;
+}
+
+}
+
+
+
+
+/* CSS */
+ 
+.prev_next_buttons {
+line-height: 40px;
+margin-bottom: 0px;
+}
+ 
+.prev_next_buttons a[rel="prev"], .prev_next_buttons a[rel="next"] {
+display: block;
+}
+ 
+.prev_next_buttons a[rel="prev"] {
+float: right;
+}
+ 
+.prev_next_buttons a[rel="next"] {
+float: left;
+}
+ 
+.prev_next_buttons::after {
+content: '';
+display: block;
+clear:both;
+}

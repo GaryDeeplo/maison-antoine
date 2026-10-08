@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    // Neutralise tout service worker périmé + vide les caches (anciens affichages)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (rs) {
+        rs.forEach(function (r) { r.unregister(); });
+      });
+    }
+    if (window.caches && caches.keys) {
+      caches.keys().then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); });
+    }
+    document.documentElement.classList.add('js');
+  </script>
+  <title>Maison Antoine · Tapissier-décorateur à Namur depuis 1895</title>
+  <meta name="description" content="Maison de décoration namuroise fondée en 1895. Matériauthèque ouverte jeudi, vendredi et samedi, 10h–18h, sans rendez-vous. Tentures, stores, réfection de sièges et habillage mural." />
+  <meta property="og:title" content="Maison Antoine · Tapissier-décorateur à Namur depuis 1895" />
+  <meta property="og:description" content="Maison de décoration namuroise fondée en 1895. Matériauthèque ouverte jeudi, vendredi et samedi, 10h–18h, sans rendez-vous. Tentures, stores, réfection de sièges et habillage mural." />
+  <meta property="og:type" content="website" />
+  <link rel="preload" href="assets/fonts/century-gothic-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/site.css?v=0f4dba48" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon.svg?v=0f4dba48" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#fbfbf9" />
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="nav" data-header>
+  <div class="nav__pill">
+    <a class="nav__brand" href="index.html" aria-label="Maison Antoine, accueil"><img src="assets/img/logo-antoine.webp" width="900" height="242" alt="" /></a>
+
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="index.html" data-nav="home" aria-current="page">Accueil</a>
+      <a href="la-maison.html" data-nav="maison">La Maison</a>
+      <a href="savoir-faire.html" data-nav="savoir-faire">Savoir&#8209;faire</a>
+      <a href="galerie.html" data-nav="galerie">Galerie</a>
+      <a href="partenaires.html" data-nav="partenaires">Partenaires</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+
+    <a class="btn nav__cta" href="contact.html">Prendre rendez&#8209;vous</a>
+
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+      <span class="nav__toggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu mobile" data-menu>
+  <a href="index.html" data-nav="home" aria-current="page">Accueil</a>
+  <a href="la-maison.html" data-nav="maison">La Maison</a>
+  <a href="savoir-faire.html" data-nav="savoir-faire">Savoir&#8209;faire</a>
+  <a href="galerie.html" data-nav="galerie">Galerie</a>
+  <a href="partenaires.html" data-nav="partenaires">Partenaires</a>
+  <a href="contact.html" data-nav="contact">Contact</a>
+  <div class="menu__foot">
+    <p>Jeudi, vendredi &amp; samedi&nbsp;: 10h à 18h, sans rendez&#8209;vous.</p>
+    <a class="btn" href="contact.html">Prendre rendez&#8209;vous</a>
+    <a class="menu__phone" href="tel:+32495703030">+32 495 70 30 30</a>
+  </div>
+</nav>
+
+  <main id="main">
+    <section class="hero hero--home" aria-labelledby="h-home" data-hero>
+  <img class="hero__img" src="assets/img/photos/ma-11.webp" alt="La matériauthèque de la Maison Antoine : étoffes, coussins et passementeries" fetchpriority="high" decoding="async" />
+  <div class="hero__text">
+    <p class="hero__eyebrow"><span>Haute couture intérieure · Namur</span><span>Maison familiale fondée en 1895</span></p>
+    <h1 class="hero__title" id="h-home" data-words>
+      <span class="w"><span>L'art</span></span>
+      <span class="w"><span>d'habiller</span></span>
+      <span class="w"><span>vos</span></span>
+      <span class="w"><span>intérieurs,</span></span>
+      <span class="w"><span>transmis</span></span>
+      <span class="w"><span>depuis</span></span>
+      <span class="w w--accent"><span>cinq</span></span>
+      <span class="w w--accent"><span>générations.</span></span>
+    </h1>
+    <div class="hero__visit">
+      <a class="btn btn--light" href="contact.html">Prendre rendez&#8209;vous</a>
+      <p class="hero__hours"><span class="dot" aria-hidden="true"></span>Matériauthèque ouverte jeu&nbsp;–&nbsp;sam, 10h&nbsp;–&nbsp;18h, sans rendez&#8209;vous</p>
+    </div>
+  </div>
+  <a class="hero-card" href="galerie.html">
+    <img src="assets/img/photos/ma-02.webp" alt="" decoding="async" />
+    <span class="hero-card__title">Galerie</span>
+    <span class="hero-card__sub">Réalisations &amp; matières.</span>
+    <svg class="hero-card__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M6 4.5h5.5V10" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+  </a>
+</section>
+
+<section class="discover wrap" aria-labelledby="h-discover">
+  <div class="discover__text">
+    <h2 class="discover__title" id="h-discover">Plus qu'une entreprise, une Maison&nbsp;: un lieu habité par la passion, le goût du beau et le respect du travail bien fait. Du choix de l'étoffe jusqu'à la pose, chaque projet est pensé comme une pièce <em>unique</em>.</h2>
+    <a class="btn" href="la-maison.html">La Maison</a>
+  </div>
+  <figure class="discover__media"><img src="assets/img/photos/ma-04.webp" alt="Fauteuil ancien habillé d'une étoffe brodée" loading="lazy" decoding="async" /></figure>
+</section>
+
+<section class="stats wrap" aria-label="La Maison en chiffres">
+  <div class="stat"><b>1895</b><span>Fondation</span></div>
+  <div class="stat"><b>5</b><span>Générations</span></div>
+  <div class="stat"><b>130+</b><span>Ans de savoir&#8209;faire</span></div>
+  <div class="stat"><b>15</b><span>Éditeurs partenaires</span></div>
+</section>
+
+<section class="rows wrap" aria-labelledby="h-steps">
+  <header class="rows__head">
+    <div>
+      <p class="label">Notre savoir&#8209;faire</p>
+      <h2 class="h2" id="h-steps">Quatre temps, du premier choix au plaisir final.</h2>
+    </div>
+  </header>
+  <ol class="rows__list">
+    <li class="row" data-step>
+      <video class="row__media" src="assets/video/etape-choisir.mp4" poster="assets/video/etape-choisir.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <div class="row__body">
+        <h3 class="row__title">Choisir</h3>
+        <p class="row__num">01</p>
+        <p class="row__text">Une matériauthèque où étoffes, textures, couleurs et matières se dévoilent pour donner vie à chaque projet.</p>
+      </div>
+    </li>
+    <li class="row" data-step>
+      <video class="row__media" src="assets/video/etape-faconner.mp4" poster="assets/video/etape-faconner.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <div class="row__body">
+        <h3 class="row__title">Façonner</h3>
+        <p class="row__num">02</p>
+        <p class="row__text">Chaque réalisation est confectionnée sur mesure dans le respect des savoir&#8209;faire artisanaux transmis depuis plusieurs générations.</p>
+      </div>
+    </li>
+    <li class="row" data-step>
+      <video class="row__media" src="assets/video/etape-installer.mp4" poster="assets/video/etape-installer.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <div class="row__body">
+        <h3 class="row__title">Installer &amp; parfaire</h3>
+        <p class="row__num">03</p>
+        <p class="row__text">La pose et les finitions sont réalisées avec exigence, afin que chaque détail trouve sa juste place.</p>
+      </div>
+    </li>
+    <li class="row" data-step>
+      <video class="row__media" src="assets/video/etape-profiter.mp4" poster="assets/video/etape-profiter.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <div class="row__body">
+        <h3 class="row__title">Profiter</h3>
+        <p class="row__num">04</p>
+        <p class="row__text">Il ne reste qu'à savourer la beauté d'un intérieur magnifié, reflet d'un art de vivre tout en élégance.</p>
+      </div>
+    </li>
+  </ol>
+  <p class="rows__more"><a class="btn" href="savoir-faire.html">Le savoir&#8209;faire en détail</a></p>
+</section>
+
+<section class="process wrap" aria-labelledby="h-lib">
+  <div class="process__text">
+    <p class="label">La Maison</p>
+    <h2 class="process__title" id="h-lib"><span class="nowrap">Une matériauthèque</span> d'un éclectisme assumé.</h2>
+    <p class="prose">Étoffes et revêtements muraux sont sélectionnés avec rigueur parmi les plus belles Maisons d'Édition. Une palette de matières, de textures et de couleurs pensée pour accompagner tous les projets de décoration intérieure.</p>
+    <a class="link" href="partenaires.html">Voir nos éditeurs</a>
+  </div>
+  <figure class="process__media"><img src="assets/img/photos/ma-12.webp" alt="La matériauthèque : échantillons suspendus et liasses d'éditeurs" loading="lazy" decoding="async" /></figure>
+</section>
+
+<section class="process process--works wrap" aria-labelledby="h-works">
+  <div class="process__text">
+    <p class="label">Nos réalisations</p>
+    <h2 class="process__title" id="h-works">Tentures, stores et sièges, façonnés sur mesure.</h2>
+    <p class="prose">Autour d'une étoffe, chaque projet trouve sa forme. Des habillages de fenêtres aux assises, des coussins aux revêtements muraux, les possibilités sont infinies, guidées par l'inspiration et les savoir&#8209;faire, jusqu'aux limites de la technique.</p>
+    <ul class="thumbs">
+      <li><img src="assets/img/photos/sm/ma-08.webp" alt="Stores en bois et vue sur le jardin" loading="lazy" /></li>
+      <li><img src="assets/img/photos/sm/ma-09.webp" alt="Pose de stores vénitiens sur mesure" loading="lazy" /></li>
+      <li><img src="assets/img/photos/sm/ma-06.webp" alt="Rideaux en lin naturel" loading="lazy" /></li>
+    </ul>
+    <a class="link process__foot" href="galerie.html">Découvrir la galerie</a>
+  </div>
+  <figure class="process__media"><img src="assets/img/photos/ma-02.webp" alt="Voilages en lin posés devant une grande baie" loading="lazy" decoding="async" /></figure>
+</section>
+
+<section class="band" aria-labelledby="h-band">
+  <img class="band__img" src="assets/img/photos/ma-13.webp" alt="" loading="lazy" decoding="async" />
+  <div class="band__inner">
+    <p class="label label--light">Nous rencontrer</p>
+    <h2 class="band__title" id="h-band">Poussez la porte de notre <em>matériauthèque</em>.</h2>
+    <p class="band__text">Nous vous accueillons les jeudis, vendredis et samedis de 10h à 18h, sans rendez&#8209;vous. Les débuts de semaine sont consacrés aux rendez&#8209;vous, à l'atelier comme chez vous.</p>
+    <a class="btn btn--light" href="contact.html">Prendre rendez&#8209;vous</a>
+  </div>
+</section>
+
+<section class="feed wrap" aria-labelledby="h-ig">
+  <header class="rows__head">
+    <div>
+      <p class="label">Instagram</p>
+      <h2 class="h2" id="h-ig"><a href="https://www.instagram.com/maisonantoinenamur/" target="_blank" rel="noopener">Suivez @maisonantoinenamur</a></h2>
+    </div>
+    <a class="link" href="https://www.instagram.com/maisonantoinenamur/" target="_blank" rel="noopener">Voir le profil</a>
+  </header>
+  <div class="feed__row">
+    <a class="sand" href="https://www.instagram.com/maisonantoinenamur/reel/DZAPPfOo3-P/" target="_blank" rel="noopener" aria-label="Voir le reel 1 sur Instagram (nouvel onglet)"><img loading="lazy" src="assets/img/reels/reel-01.webp" alt="" /></a>
+    <a class="sand" href="https://www.instagram.com/maisonantoinenamur/reel/DY7HAM8IaX_/" target="_blank" rel="noopener" aria-label="Voir le reel 2 sur Instagram (nouvel onglet)"><img loading="lazy" src="assets/img/reels/reel-02.webp" alt="" /></a>
+    <a class="sand" href="https://www.instagram.com/maisonantoinenamur/reel/DY4in6lIHT7/" target="_blank" rel="noopener" aria-label="Voir le reel 3 sur Instagram (nouvel onglet)"><img loading="lazy" src="assets/img/reels/reel-03.webp" alt="" /></a>
+    <a class="sand" href="https://www.instagram.com/maisonantoinenamur/reel/DYrrA1rIo0e/" target="_blank" rel="noopener" aria-label="Voir le reel 4 sur Instagram (nouvel onglet)"><img loading="lazy" src="assets/img/reels/reel-04.webp" alt="" /></a>
+    <a class="sand" href="https://www.instagram.com/maisonantoinenamur/reel/DYpdhJsIDAQ/" target="_blank" rel="noopener" aria-label="Voir le reel 5 sur Instagram (nouvel onglet)"><img loading="lazy" src="assets/img/reels/reel-05.webp" alt="" /></a>
+    <a class="sand" href="https://www.instagram.com/maisonantoinenamur/reel/DYH1I2MITjj/" target="_blank" rel="noopener" aria-label="Voir le reel 6 sur Instagram (nouvel onglet)"><img loading="lazy" src="assets/img/reels/reel-06.webp" alt="" /></a>
+  </div>
+</section>
+  </main>
+  <footer class="ft">
+  <div class="ft__top">
+    <a class="ft__brand" href="index.html" aria-label="Maison Antoine, accueil"><img src="assets/img/logo-antoine.webp" width="900" height="242" alt="" loading="lazy" /></a>
+
+    <div class="ft__info">
+      <address class="ft__addr">
+        Maison Antoine<br />
+        Avenue du Bourgmestre<br />
+        Jean Materne 70, <span class="nowrap">5100 Namur</span>
+      </address>
+      <p class="ft__links">
+        <a href="tel:+32495703030">T. +32 495 70 30 30</a><br />
+        <a href="assets/documents/conditions-generales-de-vente.pdf" target="_blank" rel="noopener">Conditions générales</a>
+      </p>
+      <p class="ft__hours">Jeudi, vendredi &amp; samedi&nbsp;: 10h à 18h,<br />sans rendez&#8209;vous.</p>
+    </div>
+
+    <nav class="ft__nav" aria-label="Pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="la-maison.html">La Maison</a>
+      <a href="savoir-faire.html">Savoir&#8209;faire</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <div class="ft__bottom">
+    <a class="ft__social" href="https://www.instagram.com/maisonantoinenamur/" target="_blank" rel="noopener" aria-label="Instagram @maisonantoinenamur"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+    <p class="ft__legal">
+      <span>© <span data-year>2026</span> Décoration Antoine · BE 0415.006.679</span>
+      <span>Haute couture intérieure à Namur depuis 1895</span>
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp : bouton flottant, préchoix du besoin puis message pré-rédigé -->
+<div class="wa" data-wa>
+  <div class="wa__panel" id="wa-panel" role="dialog" aria-labelledby="wa-title" hidden>
+    <p class="wa__title" id="wa-title">Quel est votre projet&nbsp;?</p>
+    <p class="wa__hint">Plusieurs choix possibles. Nous vous répondons sur WhatsApp.</p>
+    <form class="wa__form" action="https://wa.me/32495703030" target="_blank" data-wa-form>
+      <fieldset class="wa__list">
+        <legend class="sr-only">Votre projet (plusieurs choix possibles)</legend>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="habiller mes fenêtres" /><span>Habiller des fenêtres</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="choisir un revêtement mural" /><span>Choisir un revêtement mural</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="faire garnir du mobilier" /><span>Garnir du mobilier</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="choisir une étoffe" /><span>Choisir une étoffe</span></label>
+        <label class="wa__opt"><input type="checkbox" data-wa-other-toggle /><span>Autre</span></label>
+        <div class="wa__other" data-wa-other hidden>
+          <label class="sr-only" for="wa-other">Précisez votre demande</label>
+          <input id="wa-other" type="text" maxlength="120" placeholder="Ex. refaire mes coussins" autocomplete="off" />
+        </div>
+      </fieldset>
+      <button class="wa__send" type="submit">Écrire sur WhatsApp</button>
+    </form>
+  </div>
+  <button class="wa__toggle" type="button" aria-expanded="false" aria-controls="wa-panel" data-wa-toggle>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+    <span class="sr-only">Nous écrire sur WhatsApp</span>
+  </button>
+</div>
+
+  <script src="assets/js/site.js?v=0f4dba48" defer></script>
+</body>
+</html>

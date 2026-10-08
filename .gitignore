@@ -1,3 +1,11 @@
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Impeccable : fichiers de travail régénérables
+.impeccable/review/
+.impeccable/live/
+.impeccable/questions/
+.impeccable/logos-work/_r-*.png
+# Référence Behance : exports bruts lourds (les écrans isolés restent dans screens/)
+references/sanz-behance/raw/

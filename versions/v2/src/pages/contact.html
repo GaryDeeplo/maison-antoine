@@ -1,0 +1,89 @@
+<!--meta
+title: Contact · Maison Antoine, Jambes (Namur)
+description: Maison Antoine, avenue du Bourgmestre Jean Materne 70, 5100 Jambes (Namur). Ouvert les jeudis, vendredis et samedis de 10h à 18h, sans rendez-vous.
+active: contact
+theme: liasse
+-->
+
+<section class="ph" aria-labelledby="h-page">
+  <div class="rail__rod" aria-hidden="true"><span></span></div>
+  <div class="ph__cards">
+    <div class="card ph__card">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <div class="ph__body">
+        <p class="eyebrow">Contact</p>
+        <h1 class="ph__title" id="h-page">Venez nous <em>rencontrer</em>.</h1>
+        <p class="ph__intro">
+          Nous vous accueillons les jeudis, vendredis et samedis de 10h à 18h, sans rendez&#8209;vous. Les débuts de
+          semaine sont consacrés aux rendez&#8209;vous, à l'atelier comme chez vous.
+        </p>
+      </div>
+    </div>
+    <figure class="card ph__swatch">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <img class="card__swatch" src="assets/img/photos/ma-13.webp" alt="L'entrée voûtée de la Maison Antoine" style="--pos:50% 40%" fetchpriority="high" decoding="async" />
+    </figure>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="card contact__info">
+    <div class="card__eyelet" aria-hidden="true"></div>
+    <dl class="label">
+      <div>
+        <dt>Atelier</dt>
+        <dd>
+          <address>
+            Avenue du Bourgmestre Jean Materne 70<br />
+            5100 Jambes (Namur), Belgique
+          </address>
+        </dd>
+      </div>
+      <div>
+        <dt>Téléphone</dt>
+        <dd><a href="tel:+32495703030">+32 495 70 30 30</a></dd>
+      </div>
+      <div>
+        <dt>Horaires</dt>
+        <dd>
+          Jeudi, vendredi &amp; samedi&nbsp;: 10h à 18h, sans rendez&#8209;vous.<br />
+          Début de semaine sur rendez&#8209;vous, intra et extra&#8209;muros.
+        </dd>
+      </div>
+      <div>
+        <dt>Société</dt>
+        <dd>Décoration Antoine · BE 0415.006.679</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="card contact__form">
+    <div class="card__eyelet" aria-hidden="true"></div>
+    <p class="eyebrow">Décrire votre projet</p>
+    <!-- Formulaire prêt à brancher : remplacez VOTRE_ID par l'identifiant Formspree
+         (https://formspree.io) ou l'URL de votre service (n8n, etc.). Voir src/assets/SETUP.md -->
+    <form class="form" data-contact-form action="https://formspree.io/f/VOTRE_ID" method="POST">
+      <div class="field">
+        <label for="name">Nom</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for="email">E&#8209;mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="phone">Téléphone <span class="field__opt">(optionnel)</span></label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" />
+      </div>
+      <div class="field">
+        <label for="message">Votre projet</label>
+        <textarea id="message" name="message" required placeholder="Tentures, stores, réfection de sièges, habillage complet…"></textarea>
+      </div>
+      <!-- anti-spam : champ caché, à laisser vide -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+      <input type="hidden" name="_subject" value="Nouvelle demande · site Maison Antoine" />
+      <button class="btn" type="submit">Envoyer la demande</button>
+      <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+    </form>
+  </div>
+</section>

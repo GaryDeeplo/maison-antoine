@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <script>
+    // Neutralise tout service worker périmé + vide les caches (anciens affichages)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (rs) {
+        rs.forEach(function (r) { r.unregister(); });
+      });
+    }
+    if (window.caches && caches.keys) {
+      caches.keys().then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); });
+    }
+  </script>
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}" />
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:description" content="{{description}}" />
+  <meta property="og:type" content="website" />
+  <link rel="preload" href="assets/fonts/century-gothic-400.woff2" as="font" type="font/woff2" crossorigin />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="assets/css/liasse.css?v={{v}}" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon.svg?v={{v}}" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#f3f2ef" />
+</head>
+<body data-page="{{active}}">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  {{header}}
+  <main id="main">
+    {{content}}
+  </main>
+  {{footer}}
+  <script src="assets/js/liasse.js?v={{v}}" defer></script>
+</body>
+</html>

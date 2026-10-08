@@ -1,0 +1,15 @@
+.elementor-widget-theme-post-featured-image .widget-image-caption{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-theme-post-title .elementor-heading-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );color:var( --e-global-color-primary );}.elementor-36 .elementor-element.elementor-element-7117aa2 .elementor-heading-title{font-family:"MADE Mirage", Sans-serif;font-size:22px;font-weight:400;color:#222222;}.elementor-widget-image .widget-image-caption{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-theme-post-excerpt .elementor-widget-container{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );color:var( --e-global-color-text );}.elementor-36 .elementor-element.elementor-element-0f5c9c1 .elementor-widget-container{font-family:"MADE Mirage", Sans-serif;font-size:18px;font-weight:400;color:#222222;}/* Start Custom Fonts CSS */@font-face {
+	font-family: 'MADE Mirage';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url('https://bruderco.be/wp-content/uploads/2023/09/MADE-Mirage-Regular-PERSONAL-USE.woff') format('woff');
+}
+@font-face {
+	font-family: 'MADE Mirage';
+	font-style: normal;
+	font-weight: bold;
+	font-display: auto;
+	src: url('https://bruderco.be/wp-content/uploads/2023/09/MADE-Mirage-Medium-PERSONAL-USE.woff') format('woff');
+}
+/* End Custom Fonts CSS */

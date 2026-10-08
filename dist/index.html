@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <script>
+    // Neutralise tout service worker périmé + vide les caches (anciens affichages)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (rs) {
+        rs.forEach(function (r) { r.unregister(); });
+      });
+    }
+    if (window.caches && caches.keys) {
+      caches.keys().then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); });
+    }
+  </script>
+  <title>Maison Antoine · Tapissier-décorateur à Namur depuis 1895</title>
+  <meta name="description" content="Maison de décoration namuroise fondée en 1895. Matériauthèque ouverte jeudi, vendredi et samedi, 10h–18h, sans rendez-vous. Tentures, stores, réfection de sièges et habillage mural." />
+  <meta property="og:title" content="Maison Antoine · Tapissier-décorateur à Namur depuis 1895" />
+  <meta property="og:description" content="Maison de décoration namuroise fondée en 1895. Matériauthèque ouverte jeudi, vendredi et samedi, 10h–18h, sans rendez-vous. Tentures, stores, réfection de sièges et habillage mural." />
+  <meta property="og:type" content="website" />
+  <link rel="preload" href="assets/fonts/century-gothic-400.woff2" as="font" type="font/woff2" crossorigin />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="assets/css/liasse.css?v=0dc406d7" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon.svg?v=0dc406d7" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#f3f2ef" />
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="hd" data-header>
+  <a class="hd__brand" href="index.html" aria-label="Maison Antoine, accueil"><img src="assets/img/logo-antoine.webp" width="900" height="242" alt="" /></a>
+
+  <nav class="hd__nav" aria-label="Navigation principale">
+    <a href="la-maison.html" data-nav="maison">La Maison</a>
+    <a href="savoir-faire.html" data-nav="savoir-faire">Savoir&#8209;faire</a>
+    <a href="galerie.html" data-nav="galerie">Galerie</a>
+    <a href="partenaires.html" data-nav="partenaires">Partenaires</a>
+    <a href="contact.html" data-nav="contact">Contact</a>
+  </nav>
+
+  <a class="hd__status" href="index.html#visite" data-open-status>
+    <span class="hd__dot" aria-hidden="true"></span>
+    <span data-open-text>Matériauthèque&nbsp;: jeu&nbsp;–&nbsp;sam, 10h&nbsp;–&nbsp;18h</span>
+  </a>
+
+  <button class="hd__toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+    <span class="hd__toggle-label">Menu</span>
+  </button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu" data-menu>
+  <a href="index.html" data-nav="home" aria-current="page">Accueil</a>
+  <a href="la-maison.html" data-nav="maison">La Maison</a>
+  <a href="savoir-faire.html" data-nav="savoir-faire">Savoir&#8209;faire</a>
+  <a href="galerie.html" data-nav="galerie">Galerie</a>
+  <a href="partenaires.html" data-nav="partenaires">Partenaires</a>
+  <a href="contact.html" data-nav="contact">Contact</a>
+  <a class="menu__phone" href="tel:+32495703030">+32 495 70 30 30</a>
+</nav>
+
+  <main id="main">
+    <!-- La tringle : cartes-échantillons suspendues (vraies photos src/assets/img/photos) -->
+<section class="rail" aria-labelledby="h-home" data-rail>
+  <div class="rail__rod" aria-hidden="true"><span></span></div>
+
+  <div class="rail__cards">
+    <article class="card card--id" style="--i:0">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <div class="card__body" data-hero>
+        <p class="card__eyebrow"><span class="stitch" aria-hidden="true"></span><span class="card__eyebrow-text"><span>Haute couture intérieure · Namur</span><span>Maison familiale fondée en 1895</span></span></p>
+        <h1 class="card__title" id="h-home" data-words>
+          <span class="w"><span>L'art</span></span>
+          <span class="w"><span>d'habiller</span></span>
+          <span class="w"><span>vos</span></span>
+          <span class="w"><span>intérieurs,</span></span>
+          <span class="w"><span>transmis</span></span>
+          <span class="w"><span>depuis</span></span>
+          <span class="w w--accent"><span>cinq</span></span>
+          <span class="w w--accent"><span>générations.</span></span>
+        </h1>
+      </div>
+    </article>
+
+    <figure class="card card--sw" style="--i:1" tabindex="0">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <img class="card__swatch" src="assets/img/photos/ma-06.webp" alt="Tenture en lin naturel, plis tombant sur le parquet" style="--pos:40% 55%" fetchpriority="high" decoding="async" />
+      <figcaption class="card__tag"><b>Lin naturel</b><span>Tentures</span></figcaption>
+    </figure>
+
+    <figure class="card card--sw" style="--i:2" tabindex="0">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <img class="card__swatch" src="assets/img/photos/ma-04.webp" alt="Fauteuil ancien habillé d'une étoffe brodée" style="--pos:50% 40%" decoding="async" />
+      <figcaption class="card__tag"><b>Étoffe brodée</b><span>Réfection de siège</span></figcaption>
+    </figure>
+
+    <figure class="card card--sw" style="--i:3" tabindex="0">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <img class="card__swatch" src="assets/img/photos/ma-05.webp" alt="Tenture grise devant une baie vitrée" style="--pos:22% 60%" decoding="async" />
+      <figcaption class="card__tag"><b>Tenture</b><span>Habillage de baie</span></figcaption>
+    </figure>
+
+    <figure class="card card--sw" style="--i:4" tabindex="0">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <img class="card__swatch" src="assets/img/photos/ma-07.webp" alt="Store à lamelles de bois et linge sur une échelle" style="--pos:70% 50%" decoding="async" />
+      <figcaption class="card__tag"><b>Store en bois</b><span>Fenêtres</span></figcaption>
+    </figure>
+
+    <figure class="card card--sw" style="--i:5" tabindex="0">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <img class="card__swatch" src="assets/img/photos/ma-10.webp" alt="Une étoffe imprimée dépliée à la matériauthèque" style="--pos:40% 80%" decoding="async" />
+      <figcaption class="card__tag"><b>Imprimé</b><span>À la matériauthèque</span></figcaption>
+    </figure>
+
+    <figure class="card card--sw" style="--i:6" tabindex="0">
+      <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+      <img class="card__swatch" src="assets/img/photos/ma-11.webp" alt="Le mur d'échantillons de la matériauthèque" style="--pos:62% 50%" decoding="async" />
+      <figcaption class="card__tag"><b>La matériauthèque</b><span>Jambes</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="voice" aria-label="La Maison">
+  <p class="voice__text">Plus qu'une entreprise, une Maison&nbsp;: un lieu habité par la passion, le goût du beau et le respect du travail bien fait. Du choix de l'étoffe jusqu'à la pose, chaque projet est pensé comme une pièce <em>unique</em>.</p>
+</section>
+
+<section class="lib" aria-labelledby="h-lib">
+  <figure class="lib__media">
+    <img src="assets/img/photos/ma-12.webp" alt="La matériauthèque : échantillons suspendus et liasses d'éditeurs" loading="lazy" decoding="async" />
+  </figure>
+  <div class="lib__text">
+    <p class="eyebrow">La Maison</p>
+    <h2 class="h2" id="h-lib"><span class="nowrap">Une matériauthèque</span> d'un éclectisme assumé.</h2>
+    <p class="prose">Étoffes et revêtements muraux sont sélectionnés avec rigueur parmi les plus belles Maisons d'Édition. Une palette de matières, de textures et de couleurs pensée pour accompagner tous les projets de décoration intérieure.</p>
+    <div class="label label--list">
+      <h3 class="label__head">Éditeurs représentés</h3>
+      <ul class="editors">
+        <li>Pierre Frey</li><li>Élitis</li><li>Nobilis</li><li>Designers Guild</li><li>Casamance</li>
+        <li>Morris &amp; Co</li><li>Christian Lacroix Maison</li><li>Manuel Canovas</li><li>Osborne &amp; Little</li>
+        <li>Cole &amp; Son</li><li>Jane Churchill</li><li>Les Dominotiers</li><li>Zimmer + Rohde</li><li>Sahco</li><li>Kvadrat</li>
+      </ul>
+    </div>
+    <p><a class="link" href="partenaires.html">Voir nos éditeurs</a></p>
+  </div>
+</section>
+
+<section class="steps" aria-labelledby="h-steps">
+  <p class="eyebrow">Notre savoir&#8209;faire</p>
+  <h2 class="h2 steps__title" id="h-steps">Quatre temps, du premier choix au plaisir final.</h2>
+  <div class="steps__rail">
+    <div class="rail__rod rail__rod--thin" aria-hidden="true"><span></span></div>
+    <ol class="steps__row">
+      <li class="card card--step" data-step>
+        <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+        <video class="card__swatch" src="assets/video/etape-choisir.mp4" poster="assets/video/etape-choisir.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <div class="card__tag card__tag--step"><b>Choisir</b><p>Une matériauthèque où étoffes, textures, couleurs et matières se dévoilent pour donner vie à chaque projet.</p></div>
+      </li>
+      <li class="card card--step" data-step>
+        <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+        <video class="card__swatch" src="assets/video/etape-faconner.mp4" poster="assets/video/etape-faconner.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <div class="card__tag card__tag--step"><b>Façonner</b><p>Chaque réalisation est confectionnée sur mesure dans le respect des savoir&#8209;faire artisanaux transmis depuis plusieurs générations.</p></div>
+      </li>
+      <li class="card card--step" data-step>
+        <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+        <video class="card__swatch" src="assets/video/etape-installer.mp4" poster="assets/video/etape-installer.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <div class="card__tag card__tag--step"><b>Installer &amp; parfaire</b><p>La pose et les finitions sont réalisées avec exigence, afin que chaque détail trouve sa juste place.</p></div>
+      </li>
+      <li class="card card--step" data-step>
+        <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+        <video class="card__swatch" src="assets/video/etape-profiter.mp4" poster="assets/video/etape-profiter.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <div class="card__tag card__tag--step"><b>Profiter</b><p>Il ne reste qu'à savourer la beauté d'un intérieur magnifié, reflet d'un art de vivre tout en élégance.</p></div>
+      </li>
+    </ol>
+  </div>
+  <p class="steps__more"><a class="link" href="savoir-faire.html">Le savoir&#8209;faire en détail</a></p>
+</section>
+
+<section class="works" aria-labelledby="h-works">
+  <div class="works__text">
+    <p class="eyebrow">Nos réalisations</p>
+    <h2 class="h2" id="h-works">Tentures, stores et sièges, façonnés sur mesure.</h2>
+    <p class="prose">Autour d'une étoffe, chaque projet trouve sa forme. Des habillages de fenêtres aux assises, des coussins aux revêtements muraux, les possibilités sont infinies, guidées par l'inspiration et les savoir&#8209;faire, jusqu'aux limites de la technique.</p>
+    <p><a class="link" href="galerie.html">Découvrir la galerie</a></p>
+  </div>
+  <figure class="works__a"><img src="assets/img/photos/ma-02.webp" alt="Voilages en lin posés devant une grande baie" loading="lazy" decoding="async" /></figure>
+  <figure class="works__b"><img src="assets/img/photos/ma-08.webp" alt="Stores et habillage d'une baie donnant sur la campagne" loading="lazy" decoding="async" /></figure>
+  <figure class="works__c"><img src="assets/img/photos/ma-09.webp" alt="Pose d'un store sur mesure par la Maison" loading="lazy" decoding="async" /></figure>
+</section>
+
+<section class="visit" id="visite" aria-labelledby="h-visit">
+  <figure class="visit__media">
+    <img src="assets/img/photos/ma-13.webp" alt="L'entrée voûtée de la Maison Antoine, avenue du Bourgmestre Jean Materne" loading="lazy" decoding="async" />
+  </figure>
+  <div class="visit__card">
+    <div class="card__eyelet" aria-hidden="true"><span class="hook"></span></div>
+    <p class="eyebrow">Nous rencontrer</p>
+    <h2 class="visit__title" id="h-visit">Poussez la porte de notre <em>matériauthèque</em>.</h2>
+    <p class="prose">Nous vous accueillons les jeudis, vendredis et samedis de 10h à 18h, sans rendez&#8209;vous. Les débuts de semaine sont consacrés aux rendez&#8209;vous, à l'atelier comme chez vous.</p>
+    <dl class="label">
+      <div><dt>Adresse</dt><dd>Avenue du Bourgmestre Jean Materne 70<br />5100 Jambes (Namur)</dd></div>
+      <div><dt>Téléphone</dt><dd><a href="tel:+32495703030">+32 495 70 30 30</a></dd></div>
+    </dl>
+    <p class="card__actions">
+      <a class="btn" href="contact.html">Prendre rendez&#8209;vous</a>
+      <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenue+du+Bourgmestre+Jean+Materne+70,+5100+Jambes" target="_blank" rel="noopener">Itinéraire</a>
+    </p>
+  </div>
+</section>
+
+<section class="ig" aria-labelledby="h-ig">
+  <p class="eyebrow ig__eyebrow">Instagram</p>
+  <h2 class="ig__title" id="h-ig"><a href="https://www.instagram.com/maisonantoinenamur/" target="_blank" rel="noopener">Suivez @maisonantoinenamur</a></h2>
+  <div class="ig__row">
+    <a href="https://www.instagram.com/maisonantoinenamur/reel/DZAPPfOo3-P/" target="_blank" rel="noopener" aria-label="Voir ce reel sur Instagram"><img loading="lazy" src="assets/img/reels/reel-01.webp" alt="" /></a>
+    <a href="https://www.instagram.com/maisonantoinenamur/reel/DY7HAM8IaX_/" target="_blank" rel="noopener" aria-label="Voir ce reel sur Instagram"><img loading="lazy" src="assets/img/reels/reel-02.webp" alt="" /></a>
+    <a href="https://www.instagram.com/maisonantoinenamur/reel/DY4in6lIHT7/" target="_blank" rel="noopener" aria-label="Voir ce reel sur Instagram"><img loading="lazy" src="assets/img/reels/reel-03.webp" alt="" /></a>
+    <a href="https://www.instagram.com/maisonantoinenamur/reel/DYrrA1rIo0e/" target="_blank" rel="noopener" aria-label="Voir ce reel sur Instagram"><img loading="lazy" src="assets/img/reels/reel-04.webp" alt="" /></a>
+    <a href="https://www.instagram.com/maisonantoinenamur/reel/DYpdhJsIDAQ/" target="_blank" rel="noopener" aria-label="Voir ce reel sur Instagram"><img loading="lazy" src="assets/img/reels/reel-05.webp" alt="" /></a>
+    <a href="https://www.instagram.com/maisonantoinenamur/reel/DYH1I2MITjj/" target="_blank" rel="noopener" aria-label="Voir ce reel sur Instagram"><img loading="lazy" src="assets/img/reels/reel-06.webp" alt="" /></a>
+  </div>
+  <p class="ig__more"><a class="link" href="https://www.instagram.com/maisonantoinenamur/" target="_blank" rel="noopener">Voir le profil</a></p>
+</section>
+  </main>
+  <footer class="ft">
+  <div class="ft__rod" aria-hidden="true"></div>
+  <div class="ft__inner">
+    <a class="ft__brand" href="index.html" aria-label="Maison Antoine, accueil"><img src="assets/img/logo-antoine.webp" width="900" height="242" alt="" loading="lazy" /></a>
+
+    <address class="ft__addr">
+      Maison Antoine<br />
+      Avenue du Bourgmestre<br />
+      Jean Materne 70, <span class="nowrap">5100 Namur</span>
+    </address>
+
+    <p class="ft__links">
+      <a href="tel:+32495703030">T. +32 495 70 30 30</a><br />
+      <a href="assets/documents/conditions-generales-de-vente.pdf" target="_blank" rel="noopener">Conditions générales</a>
+    </p>
+
+    <p class="ft__social"><a class="social-icon" href="https://www.instagram.com/maisonantoinenamur/" target="_blank" rel="noopener" aria-label="Instagram @maisonantoinenamur"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg></a></p>
+
+    <p class="ft__legal">
+      <span>© <span data-year>2026</span> Décoration Antoine · BE 0415.006.679</span>
+      <span>Haute couture intérieure à Namur depuis 1895</span>
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp : bouton flottant, préchoix du besoin puis message pré-rédigé -->
+<div class="wa" data-wa>
+  <div class="wa__panel" id="wa-panel" role="dialog" aria-labelledby="wa-title" hidden>
+    <p class="wa__title" id="wa-title">Quel est votre projet&nbsp;?</p>
+    <p class="wa__hint">Plusieurs choix possibles. Nous vous répondons sur WhatsApp.</p>
+    <form class="wa__form" action="https://wa.me/32495703030" target="_blank" data-wa-form>
+      <fieldset class="wa__list">
+        <legend class="sr-only">Votre projet (plusieurs choix possibles)</legend>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="habiller mes fenêtres" /><span>Habiller des fenêtres</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="choisir un revêtement mural" /><span>Choisir un revêtement mural</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="faire garnir du mobilier" /><span>Garnir du mobilier</span></label>
+        <label class="wa__opt"><input type="checkbox" name="besoin" value="choisir une étoffe" /><span>Choisir une étoffe</span></label>
+        <label class="wa__opt"><input type="checkbox" data-wa-other-toggle /><span>Autre</span></label>
+        <div class="wa__other" data-wa-other hidden>
+          <label class="sr-only" for="wa-other">Précisez votre demande</label>
+          <input id="wa-other" type="text" maxlength="120" placeholder="Ex. refaire mes coussins" autocomplete="off" />
+        </div>
+      </fieldset>
+      <button class="wa__send" type="submit">Écrire sur WhatsApp</button>
+    </form>
+  </div>
+  <button class="wa__toggle" type="button" aria-expanded="false" aria-controls="wa-panel" data-wa-toggle>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+    <span class="sr-only">Nous écrire sur WhatsApp</span>
+  </button>
+</div>
+
+  <script src="assets/js/liasse.js?v=0dc406d7" defer></script>
+</body>
+</html>
