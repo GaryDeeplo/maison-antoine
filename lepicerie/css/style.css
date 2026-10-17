@@ -172,7 +172,7 @@ h1 em, h2 em { font-style: italic; color: var(--brick); }
 
 /* ---------- Le lieu ---------- */
 .lieu { background: var(--cream); }
-.lieu-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.lieu-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
 .lieu h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
 .lieu-text p { color: var(--ink-soft); }
 .features { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: .6rem; }
@@ -180,7 +180,7 @@ h1 em, h2 em { font-style: italic; color: var(--brick); }
 .features .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 4px rgba(224, 166, 74, .2); flex: none; }
 
 .lieu-photo { margin: 0; }
-.lieu-photo img { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; aspect-ratio: 940 / 730; object-fit: cover; }
+.lieu-photo img { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; aspect-ratio: 1400 / 894; object-fit: cover; }
 .lieu-photo figcaption { font-family: var(--font-chalk); font-size: 1.4rem; color: var(--muted); margin-top: .6rem; text-align: right; }
 
 /* ---------- Ardoise ---------- */
