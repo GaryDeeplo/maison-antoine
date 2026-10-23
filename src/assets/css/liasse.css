@@ -98,7 +98,7 @@ p { text-wrap: pretty; }
 .hd__status { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--ink-2); white-space: nowrap; }
 .hd__status:hover { color: var(--ink); }
 .hd__dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--steel); flex: none; }
-.is-open .hd__dot, .label__live.is-open dd::before { background: var(--moss); box-shadow: 0 0 0 0.25rem rgb(47 74 67 / 0.14); }
+[data-open-status].is-open .hd__dot, .label__live.is-open dd::before { background: var(--moss); box-shadow: 0 0 0 0.25rem rgb(47 74 67 / 0.14); }
 .hd__toggle { display: none; padding: 0.75rem 0; }
 
 .menu {
@@ -277,9 +277,9 @@ p { text-wrap: pretty; }
 .visit { padding: 0 var(--g) clamp(5rem, 10vw, 9rem); display: grid; grid-template-columns: repeat(12, 1fr); align-items: center; }
 .visit__media { grid-column: 1 / 7; grid-row: 1; }
 .visit__media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 40%; }
-.visit__card { grid-column: 6 / 13; grid-row: 1; position: relative; z-index: 1; background: var(--card); border: 1px solid var(--hair); box-shadow: var(--sh-up);
-  padding: 0 clamp(1.5rem, 3.5vw, 3.5rem) clamp(1.75rem, 3.5vw, 3rem); }
-.visit__card .card__eyelet { margin-inline: calc(clamp(1.5rem, 3.5vw, 3.5rem) * -1); }
+.visit__card { --vp: clamp(1.5rem, 3.5vw, 3.5rem); grid-column: 6 / 13; grid-row: 1; position: relative; z-index: 1; background: var(--card); border: 1px solid var(--hair); box-shadow: var(--sh-up);
+  padding: 0 var(--vp) clamp(1.75rem, 3.5vw, 3rem); }
+.visit__card .card__eyelet { margin-inline: calc(var(--vp) * -1); }
 .visit__card .hook { display: none; }
 .visit__title { font-size: clamp(2.25rem, 1rem + 3vw, 3.75rem); line-height: 1.04; letter-spacing: -0.03em; margin: 0.75rem 0 1.25rem; max-width: 14ch; }
 
@@ -330,7 +330,7 @@ body.nav-open .wa { display: none; }
 
 /* ----- Mobile ----------------------------------------------------------- */
 @media (max-width: 860px) {
-  .voice, .lib, .works, .visit { grid-template-columns: 1fr; }
+  .voice, .lib, .works, .visit { grid-template-columns: minmax(0, 1fr); }
   .voice__text, .voice__sign, .lib__media, .lib__text, .works__text, .visit__media, .visit__card { grid-column: 1; }
   .lib__text { margin-top: 2rem; }
   .works { grid-template-columns: repeat(6, 1fr); }
@@ -428,7 +428,7 @@ body.nav-open .wa { display: none; }
 
 /* Partenaires : étiquettes-logos */
 .partners { padding: 0 var(--g) clamp(3rem, 6vw, 5rem); --drop: 1.6rem; }
-.partners__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(1rem, 2vw, 1.5rem); margin-top: var(--drop); }
+.partners__grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); margin-top: var(--drop); }
 .partner { display: flex; flex-direction: column; aspect-ratio: 4 / 3; transition: transform 0.7s var(--hang), box-shadow 0.5s var(--ease); }
 .partner .hook { display: none; }
 .partner:nth-child(-n+5) .hook { display: block; }
@@ -473,7 +473,7 @@ body.nav-open .wa { display: none; }
 .menu__phone { margin-top: auto; color: var(--ink-2); text-decoration: none; }
 
 @media (min-width: 861px) and (max-width: 1100px) {
-  .partners__grid { grid-template-columns: repeat(4, 1fr); }
+  .partners__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .partner:nth-child(5) .hook { display: none; }
 }
 @media (max-width: 860px) {
@@ -482,9 +482,90 @@ body.nav-open .wa { display: none; }
   .story, .profile { grid-template-columns: 1fr; }
   .story__text, .profile__card, .profile__text, .profile--reverse .profile__card, .profile--reverse .profile__text { grid-column: 1; grid-row: auto; }
   .profile__text { margin-top: 2rem; }
-  .partners__grid { grid-template-columns: repeat(2, 1fr); }
+  .partners__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .partner:nth-child(n+3) .hook { display: none; }
   .ft__inner { grid-template-columns: 1fr 1fr; }
   .ft__brand { grid-column: 1 / -1; }
   .contact__info .label > div { grid-template-columns: 1fr; }
 }
+
+
+/* =========================================================================
+   Adaptation : téléphones, tablettes, paysage, écrans tactiles
+   ========================================================================= */
+
+/* Statut de la matériauthèque dans le menu mobile */
+.menu { overflow-y: auto; overscroll-behavior: contain; }
+.menu > .menu__status { margin-top: auto; display: inline-flex; border-bottom: 0; align-items: center; gap: 0.6rem; padding-block: 0.75rem; color: var(--ink-2); text-decoration: none;
+  text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.75rem; line-height: 1.4; }
+.menu__status + .menu__phone { margin-top: 0; padding-block: 0.6rem; }
+
+/* Tablette portrait : la place existe pour le statut dans l'en-tête */
+@media (min-width: 680px) and (max-width: 860px) {
+  .hd { grid-template-columns: 1fr auto auto; gap: 1.5rem; }
+  .hd__status { display: inline-flex; }
+}
+
+/* La tringle sur écran étroit : les cartes remplissent le premier écran,
+   les crochets restent accrochés à la tringle pendant le défilement */
+@media (max-width: 860px) {
+  .rail { padding-bottom: 1rem; }
+  .rail__cards { margin-top: 0; padding-top: var(--drop);
+    height: clamp(17rem, calc(100svh - var(--hd) - 1.4rem - 4px - 1.5rem), 34rem); }
+  .card--sw { width: min(68vw, 18rem); }
+}
+@media (min-width: 601px) and (max-width: 860px) {
+  .card--id { width: min(31rem, 60vw); }
+  .card--sw { width: min(15rem, 29vw); }
+}
+@media (max-width: 400px) {
+  .card__title { font-size: clamp(2.1rem, 10.5vw, 2.6rem); }
+  .visit__card { --vp: 1.25rem; margin-inline: 0; }
+  .visit__title { font-size: clamp(1.75rem, 8.6vw, 2.25rem); }
+  .ft__inner { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+}
+
+/* Quatre temps sur téléphone (accueil) : on feuillette les cartes le long de la tringle */
+@media (max-width: 600px) {
+  .steps:not(.steps--page) .steps__row { display: flex; gap: 0.9rem; margin: 0 calc(var(--g) * -1); padding: var(--drop) var(--g) 1.5rem;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--g); scrollbar-width: none; }
+  .steps:not(.steps--page) .steps__row::-webkit-scrollbar { display: none; }
+  .steps:not(.steps--page) .card--step { flex: none; width: min(78vw, 19rem); scroll-snap-align: start; }
+  .steps:not(.steps--page) .card--step .card__swatch { aspect-ratio: 4 / 5; }
+  .steps:not(.steps--page) .card__tag--step p { font-size: 0.9rem; }
+  .steps:not(.steps--page) .steps__more { margin-top: 1rem; }
+}
+
+/* Téléphone à l'horizontale : en-tête plus bas, carte d'accueil lisible d'un coup d'œil */
+@media (orientation: landscape) and (max-height: 560px) {
+  :root { --hd: 3.25rem; }
+  .card--id { width: min(32rem, 58vw); }
+  .card--sw { width: min(15rem, 30vw); }
+  .card--id .card__body { padding: 0.25rem 1.5rem 1.25rem; }
+  .card__title { font-size: clamp(1.6rem, 7.5svh, 2.6rem); max-width: 18ch; padding-top: 1rem; }
+  .ph__body { padding-top: 1.5rem; }
+  .ph__title { font-size: clamp(2rem, 11svh, 3.25rem); }
+  .menu { padding-block: 1rem; }
+  .menu > a { font-size: 1.35rem; padding-block: 0.45rem; }
+}
+
+/* Tactile : zones de toucher d'au moins 44 px, sans bouger la mise en page */
+@media (pointer: coarse) {
+  .link, .label dd a, .hd__nav a, .ig__title a { position: relative; }
+  .link::after, .label dd a::after, .hd__nav a::after, .ig__title a::after { content: ""; position: absolute; inset: -0.6rem -0.4rem; }
+  .hd__brand { display: block; padding-block: 0.55rem; }
+  .ft__brand { display: inline-block; padding-block: 0.3rem; }
+  .ft__links a { display: inline-block; padding-block: 0.65rem; }
+}
+
+/* Sans survol : pas de carte restée de travers après un toucher ;
+   sur la tringle large, toucher une carte la tire vers l'avant */
+@media (hover: none) {
+  .card--step:hover, .gallery__item:hover, .partner:hover { transform: none; box-shadow: var(--sh); }
+  .ig__row a:hover img { transform: none; }
+}
+@media (hover: none) and (min-width: 861px) {
+  .card--sw:focus { z-index: 20; transform: translateY(0.9rem) rotate(-0.9deg); box-shadow: var(--sh-up); }
+  .card--sw:focus .card__tag { opacity: 1; }
+}
+@media (pointer: coarse) { .hd__status { padding-block: 0.85rem; } }

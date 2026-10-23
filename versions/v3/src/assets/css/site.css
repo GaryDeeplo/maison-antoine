@@ -119,7 +119,7 @@ input, textarea { accent-color: var(--green); }
 
 /* ----- Hero ------------------------------------------------------------- */
 .hero { position: relative; margin: var(--edge); border-radius: var(--r); overflow: hidden; isolation: isolate; color: var(--white); background: #3a2e24; }
-.hero--home { height: calc(100svh - 2 * var(--edge)); min-height: 38rem; max-height: 62rem; }
+.hero--home { --hc: max(clamp(1rem, 3vw, 3rem), calc(4.75rem - var(--edge))); /* la carte « Galerie » dégage le bouton WhatsApp */ height: calc(100svh - 2 * var(--edge)); min-height: 38rem; max-height: 62rem; }
 .hero--page { min-height: clamp(30rem, 72svh, 46rem); display: flex; }
 .hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); z-index: -2; }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: -1;
@@ -132,7 +132,7 @@ input, textarea { accent-color: var(--green); }
 .hero__title { font-size: clamp(2.5rem, 1.2rem + 4.2vw, 4.75rem); line-height: 1.04; letter-spacing: -0.035em; text-shadow: 0 1px 3px rgb(0 0 0 / 0.25), 0 1px 24px rgb(0 0 0 / 0.25); }
 .hero__title em, .hero__title .w--accent > span { font-style: italic; color: #f1e6cf; }
 .hero__visit { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.5rem; margin-top: clamp(1.5rem, 2.5vw, 2.25rem); }
-.hero__hours { display: flex; align-items: center; gap: 0.6rem; font-size: 0.92rem; color: #fff; text-shadow: 0 1px 2px rgb(0 0 0 / 0.5); }
+.hero__hours { display: flex; align-items: baseline; gap: 0.6rem; font-size: 0.92rem; color: #fff; text-shadow: 0 1px 2px rgb(0 0 0 / 0.5); }
 .dot { flex: none; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #d9b679; }
 .hero__intro { margin-top: 1.25rem; max-width: 34rem; color: rgb(255 255 255 / 0.92); font-size: 1rem; text-shadow: 0 1px 2px rgb(0 0 0 / 0.45), 0 0 16px rgb(0 0 0 / 0.35); }
 
@@ -154,7 +154,7 @@ input, textarea { accent-color: var(--green); }
 
 /* carte « Galerie » posée sur le hero */
 .hero-card {
-  position: absolute; right: clamp(1rem, 3vw, 3rem); bottom: clamp(1rem, 3.5vw, 3rem); width: clamp(15rem, 23vw, 21rem);
+  position: absolute; right: var(--hc); bottom: var(--hc); width: clamp(15rem, 23vw, 21rem);
   display: grid; grid-template-columns: 1fr auto; padding: 0.6rem 0.6rem 0.9rem; border-radius: var(--r-s);
   background: var(--white); color: var(--ink); text-decoration: none; box-shadow: 0 1.5rem 3rem -1.5rem rgb(0 0 0 / 0.5);
 }
@@ -368,7 +368,7 @@ body.nav-open .wa { display: none; }
 }
 
 /* Hero : le texte ne passe jamais sous la carte, la carte ne passe jamais sous WhatsApp */
-@media (min-width: 721px) { .hero--home .hero__text { right: calc(clamp(15rem, 23vw, 21rem) + clamp(2rem, 5vw, 5rem)); } }
+@media (min-width: 721px) { .hero--home .hero__text { right: calc(clamp(15rem, 23vw, 21rem) + var(--hc) + clamp(1.5rem, 3vw, 3rem)); } }
 @media (max-width: 720px) { .hero--home { padding-bottom: 5.25rem; } }
 @media (max-width: 720px) {
   .hero::after { background: linear-gradient(180deg, rgb(40 26 14 / 0.3) 0%, rgb(40 26 14 / 0.1) 14%, rgb(36 24 14 / 0.7) 32%, rgb(32 22 13 / 0.9) 100%); }
@@ -389,3 +389,52 @@ body.nav-open .wa { display: none; }
 .meta__route { margin-top: 0.25rem; }
 .map { border-radius: var(--r-s); overflow: hidden; background: var(--sand); aspect-ratio: 4 / 3; }
 .map iframe { display: block; width: 100%; height: 100%; border: 0; filter: saturate(0.7) sepia(0.12); }
+
+/* =========================================================================
+   Adaptation : tablettes, paysage, écrans tactiles
+   ========================================================================= */
+.menu { overflow-y: auto; overscroll-behavior: contain; }
+
+/* Tablette : on garde deux colonnes là où la place le permet */
+@media (min-width: 600px) and (max-width: 960px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 721px) and (max-width: 960px) {
+  .row:has(video.row__media) { grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); }
+  .row:has(video.row__media) video.row__media { width: 100%; }
+  .rows__list--people .row { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+}
+@media (min-width: 561px) and (max-width: 960px) { .feed__row { grid-auto-columns: calc((100% - 2rem) / 2.6); } }
+@media (max-width: 400px) { .feed .h2 { font-size: 1.45rem; } }
+
+/* Téléphone à l'horizontale : le titre, l'action et la carte « Galerie » tiennent dans l'écran */
+@media (orientation: landscape) and (max-height: 560px) {
+  .nav { top: calc(var(--edge) + 0.5rem); }
+  .hero--home { height: auto; min-height: calc(100svh - 2 * var(--edge)); max-height: none; display: flex; flex-direction: row; align-items: flex-end; gap: 1.5rem;
+    padding: 5rem 5rem 1rem clamp(1.25rem, 4vw, 2.5rem); }
+  .hero--home .hero__text { position: static; flex: 1; max-width: 34rem; }
+  .hero__title { font-size: clamp(1.9rem, 9.5svh, 2.75rem); }
+  .hero__eyebrow { margin-bottom: 0.6rem; }
+  .hero__visit { margin-top: 1rem; }
+  .hero-card { position: static; flex: none; width: 15rem; grid-template-columns: 5.5rem 1fr auto; column-gap: 0.75rem; padding: 0.5rem; align-items: center; }
+  .hero-card img { grid-column: 1; grid-row: 1 / 3; aspect-ratio: 4 / 3; margin: 0; }
+  .hero-card__title { grid-column: 2; align-self: end; }
+  .hero-card__sub { grid-column: 2; align-self: start; }
+  .hero-card__arrow { grid-column: 3; grid-row: 1 / 3; align-self: center; }
+  .hero--page { min-height: calc(100svh - 2 * var(--edge)); }
+  .hero--page .hero__text { padding-top: 5.5rem; margin-bottom: 1.5rem; }
+  .hero__intro { margin-top: 0.75rem; }
+  .menu { padding-top: 5rem; }
+  .menu > a { font-size: 1.35rem; padding-block: 0.45rem; }
+}
+
+/* Tactile : zones de toucher d'au moins 44 px */
+@media (pointer: coarse) {
+  .nav__brand { display: block; padding-block: 0.6rem; }
+  .ft__brand { display: inline-block; padding-block: 0.3rem; }
+  .ft__links a { display: inline-block; padding-block: 0.65rem; }
+  .ft__nav a { padding-block: 0.75rem; }
+  .meta dd a:not(.link), .h2 a { position: relative; }
+  .meta dd a:not(.link)::after, .h2 a::after { content: ""; position: absolute; inset: -0.6rem -0.4rem; }
+}
+@media (hover: none) {
+  .gallery__item:hover img { transform: none; }
+}
